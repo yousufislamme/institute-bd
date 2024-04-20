@@ -16,8 +16,9 @@ const Hero = () => {
     <div className="px-10 flex flex-col bg-purple-50 justify-center items-center pt-20 pb-10">
       <h1 className={`${salsa.className} sm:text-4xl lg:text-[50px]`}>Better Future For Your Kinds <span className="text-purple-800">.</span> </h1>
       <p className={`${roboto.className}bg-white shadow-lg px-2 py-1 my-5 rounded-sm`}>Let the child be the director, and the actor in his won play</p>
-      <Button className="bg-purple-800 font-semibold text-white px-10 py-3 my-10 rounded-full shadow-xl mt-5" BtnTitle="Get Start" />
-      {/* Grid */}
+      <Button className="bg-purple-800 font-semibold text-white px-10 py-3 my-10 rounded-full shadow-xl mt-5" BtnTitle="Get Start">
+        
+      </Button>
       <div className="grid w-full grid-cols-10 mt-5 gap-5 ">
         {/* col 1 */}
         <div className="col-span-3">
