@@ -7,7 +7,7 @@ const Header = () => {
         <div className=" font-semibold flex items-center">
           <div>
             <Link className=" text-xl" href="/">
-              Institute
+              Institute bd
             </Link>
           </div>
           {/* navigation */}
