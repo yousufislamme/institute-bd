@@ -29,7 +29,7 @@ const Header = () => {
             </Link>
           </div>
           <div>
-            <Link className="" href="/">
+            <Link className="" href="/login">
               Login
             </Link>
           </div>
