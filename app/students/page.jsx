@@ -80,6 +80,10 @@ const Students = () => {
             <input type="text" name="age" placeholder="Enter Age" value={formData.age}
             onChange={handleInputChange}  className="bg-gray-300 mt-2 text-black text-xl px-3 py-2 outline-none rounded-md" />
           </label> <br />
+          <label>Birth & Data <br />
+            <input type="date" />
+          </label>
+
           <label>Religion <br />
             <select onChange={handleInputChange} name="religion">
               <option value="Option">Option</option>
@@ -140,7 +144,7 @@ const Students = () => {
               value={formData.message} 
               placeholder="Message"
               onChange={handleInputChange} 
-              className="bg-gray-300 mt-2 text-black text-xl px-3 py-2 outline-none rounded-md" 
+              className=" mt-2 text-black text-xl px-3 py-2 outline-none bg-gray-300 rounded-md" 
               
         />
       </label>
