@@ -34,12 +34,38 @@ const Students = () => {
   };
 
   // Event handler to handle form submission
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Here you can do something with the form data, like sending it to a server
-    console.table(formData);
-    console.log(formData);
-  };
+const handleSubmit = async (e) => {
+  e.preventDefault();
+
+  
+ try {
+   const response = await fetch('http://localhost:5000/users', {
+     method: "POST",
+     headers: {
+       "Content-Type": "application/json"
+     },
+     body: JSON.stringify(formData)
+   },
+   );
+         if (!response.ok) {
+        throw new Error("Network response was not ok");
+      }
+
+      const data = await response.json();
+      console.log("my data:::", data);
+    } catch (error) {
+      console.error("Error:", error);
+    }
+
+ } 
+
+    // Optionally reset the form or update state here
+    // setFormData({}); // Reset form data if necessary
+
+  console.table(formData);
+  console.log(formData);
+
+
   return (
     <section className="container mx-auto px-10 mb-52">
       <h1>Student page.</h1>
@@ -145,7 +171,7 @@ const Students = () => {
         />
       </label>
       <br />
-                <Button BtnTitle="submit" type="submit" className="bg-orange-500 px-5 py-2 rounded-lg" />
+        <Button BtnTitle="submit" type="submit" className="bg-orange-500 px-5 py-2 rounded-lg" />
 
     </form>
       </div>
