@@ -115,9 +115,18 @@ const handleSubmit = async (e) => {
             <br />
             <input type="text" name="age" placeholder="Enter Age" value={formData.age}
             onChange={handleInputChange}  className="bg-gray-300 mt-2 text-black text-xl px-3 py-2 outline-none rounded-md" />
+
+          </label> <br />
+          <label>Birth & Data <br />
+            <input type="date" />
+          </label>
+
+          <label>Religion <br />
+
           </label> 
           <label className="flex items-center justify-center"> Religion 
               <br />
+
             <select onChange={handleInputChange} name="religion">
               <option value="Option">Option</option>
               <option value="Islam">Islam</option>
@@ -185,7 +194,7 @@ const handleSubmit = async (e) => {
               value={formData.message} 
               placeholder="Message"
               onChange={handleInputChange} 
-              className="bg-gray-300 mt-2 text-black text-xl px-3 py-2 outline-none rounded-md" 
+              className=" mt-2 text-black text-xl px-3 py-2 outline-none bg-gray-300 rounded-md" 
               
         />
       </label>
