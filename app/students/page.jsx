@@ -51,19 +51,26 @@ const handleSubmit = async (e) => {
         throw new Error("Network response was not ok");
       }
 
-      const data = await response.json();
+   const data = await response.json();
+     if (data.acknowledged) {
+    alert("Student added.");
+  } else {
+    alert("Something error.");
+    
+  }
       console.log("my data:::", data);
     } catch (error) {
       console.error("Error:", error);
-    }
+  }
+
+  console.table(formData);
+  console.log(formData);
 
  } 
 
     // Optionally reset the form or update state here
     // setFormData({}); // Reset form data if necessary
 
-  console.table(formData);
-  console.log(formData);
 
 
   return (
@@ -76,9 +83,10 @@ const handleSubmit = async (e) => {
         {/* user er sob input fields eikhane */}
       
       <div>
-       <form onSubmit={handleSubmit}>
+       <form className="grid grid-cols-1  md:grid-cols-2 lg:grid-cols-4" onSubmit={handleSubmit}>
       <label>
-        Student's Name: <br />
+        Student's Name: 
+        <br />
         <input 
           type="text" 
           name="studentName" 
@@ -89,9 +97,10 @@ const handleSubmit = async (e) => {
             />
           
       </label>
-      <br />
+      
       <label>
-        Email: <br />
+        Email: 
+        <br />
         <input 
           type="email" 
           name="email" 
@@ -101,12 +110,14 @@ const handleSubmit = async (e) => {
               className="bg-gray-300 mt-2 text-black text-xl px-3 py-2 outline-none rounded-md" 
               
         />
-          </label> <br />
-          <label> Age:  <br />
+          </label> 
+          <label> Age:  
+            <br />
             <input type="text" name="age" placeholder="Enter Age" value={formData.age}
             onChange={handleInputChange}  className="bg-gray-300 mt-2 text-black text-xl px-3 py-2 outline-none rounded-md" />
-          </label> <br />
-          <label>Religion <br />
+          </label> 
+          <label className="flex items-center justify-center"> Religion 
+              <br />
             <select onChange={handleInputChange} name="religion">
               <option value="Option">Option</option>
               <option value="Islam">Islam</option>
@@ -114,17 +125,19 @@ const handleSubmit = async (e) => {
               <option value="Christian">Christian </option>
           </select>
           </label>
-          <br />
+          
           <label>
-            sex: <br />
+            sex: 
+            <br />
             <select name="sex" onChange={handleInputChange} >
               <option value="option">Option</option>
               <option value="male">Male</option>
               <option value="female">Female</option>
             </select>
-          </label> <br />
+          </label> 
           <label>
-            Classes: <br />
+            Classes: 
+            <br />
             <select onChange={handleInputChange} name="class">
               <option value="1">1</option>
               <option value="2">2</option>
@@ -137,30 +150,36 @@ const handleSubmit = async (e) => {
               <option value="9">9</option>
               <option value="10">10</option>
             </select>
-          </label> <br />
+          </label> 
           <label> Father's Name: <br />
             <input type="text" name="fatherName" placeholder="Father's Name" value={formData.fatherName}
+            
             onChange={handleInputChange}  className="bg-gray-300 mt-2 text-black text-xl px-3 py-2 outline-none rounded-md" />
           </label>
-      <br />
+      
           <label> Mather's Name: <br />
             <input type="text" name="matherName" placeholder="Mather's Name" value={formData.matherName}
+           
             onChange={handleInputChange}  className="bg-gray-300 mt-2 text-black text-xl px-3 py-2 outline-none rounded-md" />
-          </label> <br />
+          </label> 
           <label>
-            Contact Number: <br /> 
+            Contact Number:  
+            <br />
               <input className="bg-gray-300 mt-2 text-black text-xl px-3 py-2 outline-none rounded-md" type="number" name="contactNumber" onChange={handleInputChange} value={formData.contactNumber} />
-          </label> <br />
+          </label> 
           <label>
-            Address: <br /> 
+            Address:  
+            <br />
               <input className="bg-gray-300 mt-2 text-black text-xl px-3 py-2 outline-none rounded-md" type="text" name="address" onChange={handleInputChange} value={formData.address} />
-          </label> <br />
-          <label>Nationality: <br />
+          </label> 
+          <label>Nationality: 
           <input type="text" placeholder="Nationality" className="bg-gray-300 mt-2 text-black text-xl px-3 py-2 outline-none rounded-md" value={formData.nationality} onChange={handleInputChange} name="nationality" />
+          <br />
           </label>
-      <br />
+      
       <label>
-        Message:<br />
+        Message:
+        <br />
         <textarea 
           name="message" 
               value={formData.message} 
@@ -170,7 +189,7 @@ const handleSubmit = async (e) => {
               
         />
       </label>
-      <br />
+      
         <Button BtnTitle="submit" type="submit" className="bg-orange-500 px-5 py-2 rounded-lg" />
 
     </form>
