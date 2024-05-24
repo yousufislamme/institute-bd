@@ -9,9 +9,8 @@ const Result = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const [isEditing, setIsEditing] = useState(false);
   const [currentStudent, setCurrentStudent] = useState(null);
-
   useEffect(() => {
-    fetch("http://localhost:5000/users")
+    fetch("https://school-server-git-main-yousufislammes-projects.vercel.app/users")
       .then(res => res.json())
       .then(data => { 
         setStudents(data);
@@ -41,7 +40,7 @@ const Result = () => {
   });
 
   const handleDelete = (_id) => {
-    fetch(`http://localhost:5000/users/${_id}`, {
+    fetch(`https://school-server-git-main-yousufislammes-projects.vercel.app/users/${_id}`, {
       method: "DELETE",
     })
       .then(res => res.json())
@@ -69,7 +68,7 @@ const Result = () => {
     email: event.target.email.value,
   };
 
-  fetch(`http://localhost:5000/users/${currentStudent._id}`, {
+  fetch(`https://school-server-git-main-yousufislammes-projects.vercel.app/users/${currentStudent._id}`, {
     method: "PUT",
     headers: {
       "Content-Type": "application/json"

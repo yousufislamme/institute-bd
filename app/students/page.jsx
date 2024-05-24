@@ -39,7 +39,7 @@ const handleSubmit = async (e) => {
 
   
  try {
-   const response = await fetch('http://localhost:5000/users', {
+   const response = await fetch('https://school-server-git-main-yousufislammes-projects.vercel.app/users', {
      method: "POST",
      headers: {
        "Content-Type": "application/json"
