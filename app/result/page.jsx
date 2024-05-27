@@ -1,4 +1,5 @@
 "use client";
+import Loading from "@/components/Loading";
 import { useEffect, useState } from "react";
 import { CiEdit } from "react-icons/ci";
 import { MdDeleteOutline } from "react-icons/md";
@@ -66,6 +67,7 @@ const Result = () => {
   const updatedStudent = {
     studentName: event.target.studentName.value,
     email: event.target.email.value,
+    class: event.target.class.value,
   };
 
   fetch(`https://school-server-git-main-yousufislammes-projects.vercel.app/users/${currentStudent._id}`, {
@@ -107,13 +109,25 @@ const Result = () => {
       <div>
         {
           loading ? (
-            <p>Loading....</p>
+            <div className="flex justify-center items-center ">
+              <Loading />
+            </div>
           ) : (
             filteredStudents.map((item) => (
               <div key={item._id} className="group border-2 flex justify-between items-center px-5 rounded-lg m-3">
                 <div>
                   <h2 className="py-2">{item.studentName}</h2>
                   <p>{item.email}</p>
+                  <p>{item.age}</p>
+                  <p>{item.class}</p>
+                  <p>{item.fatherName}</p>
+                  <p>{item.matherName}</p>
+                  <p>{item.religion}</p>
+                  <p>{item.sex}</p>
+                  <p>{item.nationality}</p>
+                  <p>{item.contactNumber}</p>
+                  <p>{item.address}</p>
+                  <span className="text-xs text-orange-400">{item.dateTime}</span>
                 </div>
                 <div className="hidden group-hover:block transition ease-in-out">
                   <div className="flex items-center gap-1">
@@ -155,6 +169,26 @@ const Result = () => {
                     type="email"
                     name="email"
                     defaultValue={currentStudent.email}
+                    className="mt-1 block w-full border px-3 py-2 rounded-lg shadow-sm"
+                    required
+                  />
+                </label>
+                <label className="block text-sm font-medium text-gray-700">
+                  Age
+                  <input
+                    type="age"
+                    name="age"
+                    defaultValue={currentStudent.age}
+                    className="mt-1 block w-full border px-3 py-2 rounded-lg shadow-sm"
+                    required
+                  />
+                </label>
+                <label className="block text-sm font-medium text-gray-700">
+                  Class
+                  <input
+                    type="class"
+                    name="class"
+                    defaultValue={currentStudent.class}
                     className="mt-1 block w-full border px-3 py-2 rounded-lg shadow-sm"
                     required
                   />
