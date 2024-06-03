@@ -68,6 +68,14 @@ const Result = () => {
     studentName: event.target.studentName.value,
     email: event.target.email.value,
     class: event.target.class.value,
+    age: event.target.age.value,
+    fatherName: event.target.fatherName.value,
+    matherName: event.target.matherName.value,
+    religion: event.target.religion.value,
+    sex: event.target.sex.value,
+    nationality: event.target.nationality.value,
+    contactNumber: event.target.contactNumber.value,
+    address: event.target.address.value
   };
 
   fetch(`https://school-server-git-main-yousufislammes-projects.vercel.app/users/${currentStudent._id}`, {
@@ -142,15 +150,17 @@ const Result = () => {
               </div>
             ))
           )
-        }
+        } 
       </div>
 
       {isEditing && currentStudent && (
-        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
+        <div className="fixed overflow-scroll inset-0 flex items-center justify-center bg-black bg-opacity-50">
           <div className="bg-white p-5 rounded-lg">
-            <h2>Edit Student</h2>
-            <form onSubmit={handleEditSubmit}>
-              <div className="mb-4">
+            <h2>Edit Student info</h2>
+            <form  onSubmit={handleEditSubmit}>
+              <div className="grid grid-cols-2 gap-2">
+                
+               
                 <label className="block text-sm font-medium text-gray-700">
                   Name
                   <input
@@ -161,8 +171,7 @@ const Result = () => {
                     required
                   />
                 </label>
-              </div>
-              <div className="mb-4">
+                
                 <label className="block text-sm font-medium text-gray-700">
                   Email
                   <input
@@ -173,6 +182,7 @@ const Result = () => {
                     required
                   />
                 </label>
+                
                 <label className="block text-sm font-medium text-gray-700">
                   Age
                   <input
@@ -193,7 +203,77 @@ const Result = () => {
                     required
                   />
                 </label>
-              </div>
+                <label className="block text-sm font-medium text-gray-700">
+                  Father's Name
+                  <input
+                    type="fatherName"
+                    name="fatherName"
+                    defaultValue={currentStudent.fatherName}
+                    className="mt-1 block w-full border px-3 py-2 rounded-lg shadow-sm"
+                    required
+                  />
+                </label>
+                <label className="block text-sm font-medium text-gray-700">
+                  Mather's Name
+                  <input
+                    type="matherName"
+                    name="matherName"
+                    defaultValue={currentStudent.matherName}
+                    className="mt-1 block w-full border px-3 py-2 rounded-lg shadow-sm"
+                    required
+                  />
+                </label>
+                <label className="block text-sm font-medium text-gray-700">
+                  Religion
+                  <input
+                    type="religion"
+                    name="religion"
+                    defaultValue={currentStudent.religion}
+                    className="mt-1 block w-full border px-3 py-2 rounded-lg shadow-sm"
+                    required
+                  />
+                </label>
+                <label className="block text-sm font-medium text-gray-700">
+                  Sex
+                  <input
+                    type="sex"
+                    name="sex"
+                    defaultValue={currentStudent.sex}
+                    className="mt-1 block w-full border px-3 py-2 rounded-lg shadow-sm"
+                    required
+                  />
+                </label>
+                <label className="block text-sm font-medium text-gray-700">
+                  Nationality
+                  <input
+                    type="nationality"
+                    name="nationality"
+                    defaultValue={currentStudent.nationality}
+                    className="mt-1 block w-full border px-3 py-2 rounded-lg shadow-sm"
+                    required
+                  />
+                </label>
+                <label className="block text-sm font-medium text-gray-700">
+                  Number
+                  <input
+                    type="contactNumber"
+                    name="contactNumber"
+                    defaultValue={currentStudent.contactNumber}
+                    className="mt-1 block w-full border px-3 py-2 rounded-lg shadow-sm"
+                    required
+                  />
+                </label>
+                <label className="block text-sm font-medium text-gray-700">
+                  Address
+                  <input
+                    type="address"
+                    name="address"
+                    defaultValue={currentStudent.address}
+                    className="mt-1 block w-full border px-3 py-2 rounded-lg shadow-sm"
+                    required
+                  />
+                </label> 
+                </div>
               <div className="flex justify-end gap-2">
                 <button
                   type="button"
