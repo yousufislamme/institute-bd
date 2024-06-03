@@ -15,7 +15,7 @@ const SideBar = () => {
             <Link href={"/dashboard/addStudent"}> Manage student</Link>
           </li>
           <li> 
-            <Link href={"/dashboard/studentsList"}> Students List</Link>
+            <Link href={"/dashboard/studentsList"}> Students List</Link>  
           </li>
         </ul>
       </nav>
