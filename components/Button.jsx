@@ -1,9 +1,9 @@
-
-const Button = ({BtnTitle,type, className}) => {
+const Button = ({ BtnTitle, type, className, onClick }) => {
   return (
-    <button type={type} className={className}>{BtnTitle}</button>
-  )
+    <button onClick={onClick} type={type} className={className}>
+      {BtnTitle}
+    </button>
+  );
+};
 
-}
-
-export default Button
+export default Button;
