@@ -1,5 +1,6 @@
-"use client";
+"use client"; 
 import { app } from "@/firebase.init"; // Ensure the correct path to your firebase.init.js
+ 
 import {
    GoogleAuthProvider,
    getAuth,
@@ -38,4 +39,6 @@ export const ContextProvider = ({ children }) => {
          {children}
       </Context.Provider>
    );
+ 
 };
+ 
