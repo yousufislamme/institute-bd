@@ -10,6 +10,7 @@ const StudentsList = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [isEditing, setIsEditing] = useState(false);
   const [currentStudent, setCurrentStudent] = useState(null);
+
   useEffect(() => {
     fetch(
       "https://school-server-git-main-yousufislammes-projects.vercel.app/users",
