@@ -7,7 +7,6 @@ export default function DashboardLayout({
     <section className="flex">
       {/* Include shared UI here e.g. a header or sidebar */}
       <SideBar />
-
       {children}
     </section>
   );
