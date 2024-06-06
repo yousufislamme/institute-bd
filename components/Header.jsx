@@ -7,18 +7,15 @@ const Header = () => {
   const { users } = useContext(Context);
   return (
     <>
-      <header className="border-b-2 px-1 md:px-5">
-        <div className="flex items-center font-semibold">
-          <div>
+      <header className="first-letter: border-b-2 px-1 md:px-5 lg:px-20">
+        <div className="flex w-full items-center justify-end font-semibold">
+          <div className=" ">
             <Link className="text-xl" href="/">
               Institute
             </Link>
           </div>
           {/* navigation */}
-          <div className="menu flex w-full items-center justify-center gap-1">
-            <Link className="px-1 py-2" href="/students">
-              Students
-            </Link>
+          <div className="flex w-full items-center justify-end gap-5">
             <Link className="px-1 py-2" href="/blog">
               Blog
             </Link>
@@ -28,10 +25,9 @@ const Header = () => {
             <Link className="px-1 py-2" href="/dashboard">
               Dashboard
             </Link>
-          </div>
-          <div>
+
             <Link className="" href="/login">
-              {users ? "LogOut" : <Login />}
+              {users ? "Login" : <Login />}
             </Link>
           </div>
         </div>
