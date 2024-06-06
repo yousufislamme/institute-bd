@@ -3,6 +3,7 @@
 import { Roboto, Salsa } from "next/font/google";
 import Image from "next/image";
 import Button from "./Button";
+import Search from "./Search";
 import Girl from "./img/girl.png";
 import RightGirl from "./img/rightGirl.png";
 const salsa = Salsa({ weight: "400", subsets: ["latin"] });
@@ -10,7 +11,8 @@ const roboto = Roboto({ weight: "400", subsets: ["latin"] });
 
 const Hero = () => {
   return (
-    <div className="flex flex-col items-center justify-center bg-purple-50 px-10 pb-10 pt-20">
+    <div className="flex flex-col items-center justify-center bg-purple-50 px-10 pb-10 pt-10">
+      <Search className="mb-5 w-[400px] border-2 px-10 py-2" />
       <h1 className={`${salsa.className} sm:text-4xl lg:text-[50px]`}>
         Better Future For Your Kinds <span className="text-purple-800">.</span>{" "}
       </h1>
@@ -22,6 +24,7 @@ const Hero = () => {
       <Button
         className="my-10 mt-5 rounded-full bg-purple-800 px-10 py-3 font-semibold text-white shadow-xl"
         BtnTitle="Get Start"
+        href="/dashboard/addStudent"
       ></Button>
       <div className="mt-5 grid w-full grid-cols-10 gap-5">
         {/* col 1 */}
