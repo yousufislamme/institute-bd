@@ -2,7 +2,7 @@
 import Login from "@/app/login/page";
 import Link from "next/link";
 import { useContext } from "react";
-import { Context } from "./Context/context";
+import { Context } from "./Context/Context";
 const Header = () => {
   const { users } = useContext(Context);
   return (
