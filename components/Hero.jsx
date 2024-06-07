@@ -27,7 +27,7 @@ const Hero = () => {
           {filteredStudents.map((item) =>
             searchQuery > item.studentName ? (
               <div className="flex rounded-b-lg px-3 py-2" key={item._id}>
-                <Link href={item._id}>
+                <Link href={`users/${item._id}`}>
                   Name: {item.studentName} | {item.email}
                 </Link>
               </div>
