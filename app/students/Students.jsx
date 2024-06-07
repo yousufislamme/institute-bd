@@ -4,20 +4,19 @@ import { useState } from "react";
 import { salsa } from "./page";
 
 export const Students = () => {
-
   const [formData, setFormData] = useState({
-    studentName: '',
-    email: '',
-    message: '',
-    age: '',
-    class: '',
-    fatherName: '',
-    matherName: '',
-    religion: '',
-    sex: '',
-    nationality: '',
-    contactNumber: '',
-    address: '',
+    studentName: "",
+    email: "",
+    message: "",
+    age: "",
+    class: "",
+    fatherName: "",
+    matherName: "",
+    religion: "",
+    sex: "",
+    nationality: "",
+    contactNumber: "",
+    address: "",
   });
 
   // Event handler to update form data when input changes
@@ -25,7 +24,7 @@ export const Students = () => {
     const { name, value } = e.target;
     setFormData({
       ...formData,
-      [name]: value
+      [name]: value,
     });
   };
 
@@ -37,10 +36,12 @@ export const Students = () => {
     console.log(formData);
   };
   return (
-    <section className="container mx-auto px-10 mb-52">
+    <section className="container mx-auto mb-52 px-10">
       <h1>Student page.</h1>
-      <div className="flex w-full justify-center ">
-        <h2 className={`${salsa.className} text-3xl`}>Students Information<span className="text-purple-800">.</span> </h2>
+      <div className="flex w-full justify-center">
+        <h2 className={`${salsa.className} text-3xl`}>
+          Students Information<span className="text-purple-800">.</span>{" "}
+        </h2>
       </div>
 
       {/* user er sob input fields eikhane */}
@@ -54,9 +55,9 @@ export const Students = () => {
               name="studentName"
               value={formData.studentName}
               placeholder="Full Name"
-              className="bg-gray-300 text-black text-xl px-3 py-2 outline-none rounded-md"
-              onChange={handleInputChange} />
-
+              className="rounded-md bg-gray-300 px-3 py-2 text-xl text-black outline-none"
+              onChange={handleInputChange}
+            />
           </label>
           <br />
           <label>
@@ -67,13 +68,25 @@ export const Students = () => {
               placeholder="Enter Email"
               value={formData.email}
               onChange={handleInputChange}
-              className="bg-gray-300 mt-2 text-black text-xl px-3 py-2 outline-none rounded-md" />
-          </label> <br />
-          <label> Age:  <br />
-            <input type="text" name="age" placeholder="Enter Age" value={formData.age}
-              onChange={handleInputChange} className="bg-gray-300 mt-2 text-black text-xl px-3 py-2 outline-none rounded-md" />
-          </label> <br />
-          <label>Religion <br />
+              className="mt-2 rounded-md bg-gray-300 px-3 py-2 text-xl text-black outline-none"
+            />
+          </label>{" "}
+          <br />
+          <label>
+            {" "}
+            Age: <br />
+            <input
+              type="text"
+              name="age"
+              placeholder="Enter Age"
+              value={formData.age}
+              onChange={handleInputChange}
+              className="mt-2 rounded-md bg-gray-300 px-3 py-2 text-xl text-black outline-none"
+            />
+          </label>{" "}
+          <br />
+          <label>
+            Religion <br />
             <select onChange={handleInputChange} name="religion">
               <option value="Option">Option</option>
               <option value="Islam">Islam</option>
@@ -89,7 +102,8 @@ export const Students = () => {
               <option value="male">Male</option>
               <option value="female">Female</option>
             </select>
-          </label> <br />
+          </label>{" "}
+          <br />
           <label>
             Classes: <br />
             <select onChange={handleInputChange} name="class">
@@ -104,40 +118,85 @@ export const Students = () => {
               <option value="9">9</option>
               <option value="10">10</option>
             </select>
-          </label> <br />
-          <label> Father's Name: <br />
-            <input type="text" name="fatherName" placeholder="Father's Name" value={formData.fatherName}
-              onChange={handleInputChange} className="bg-gray-300 mt-2 text-black text-xl px-3 py-2 outline-none rounded-md" />
+          </label>{" "}
+          <br />
+          <label>
+            {" "}
+            Father's Name: <br />
+            <input
+              type="text"
+              name="fatherName"
+              placeholder="Father's Name"
+              value={formData.fatherName}
+              onChange={handleInputChange}
+              className="mt-2 rounded-md bg-gray-300 px-3 py-2 text-xl text-black outline-none"
+            />
           </label>
           <br />
-          <label> Mather's Name: <br />
-            <input type="text" name="matherName" placeholder="Mather's Name" value={formData.matherName}
-              onChange={handleInputChange} className="bg-gray-300 mt-2 text-black text-xl px-3 py-2 outline-none rounded-md" />
-          </label> <br />
+          <label>
+            {" "}
+            Mather's Name: <br />
+            <input
+              type="text"
+              name="matherName"
+              placeholder="Mather's Name"
+              value={formData.matherName}
+              onChange={handleInputChange}
+              className="mt-2 rounded-md bg-gray-300 px-3 py-2 text-xl text-black outline-none"
+            />
+          </label>{" "}
+          <br />
           <label>
             Contact Number: <br />
-            <input className="bg-gray-300 mt-2 text-black text-xl px-3 py-2 outline-none rounded-md" type="number" name="contactNumber" onChange={handleInputChange} value={formData.contactNumber} />
-          </label> <br />
+            <input
+              className="mt-2 rounded-md bg-gray-300 px-3 py-2 text-xl text-black outline-none"
+              type="number"
+              name="contactNumber"
+              onChange={handleInputChange}
+              value={formData.contactNumber}
+            />
+          </label>{" "}
+          <br />
           <label>
             Address: <br />
-            <input className="bg-gray-300 mt-2 text-black text-xl px-3 py-2 outline-none rounded-md" type="text" name="address" onChange={handleInputChange} value={formData.address} />
-          </label> <br />
-          <label>Nationality: <br />
-            <input type="text" placeholder="Nationality" className="bg-gray-300 mt-2 text-black text-xl px-3 py-2 outline-none rounded-md" value={formData.nationality} onChange={handleInputChange} name="nationality" />
+            <input
+              className="mt-2 rounded-md bg-gray-300 px-3 py-2 text-xl text-black outline-none"
+              type="text"
+              name="address"
+              onChange={handleInputChange}
+              value={formData.address}
+            />
+          </label>{" "}
+          <br />
+          <label>
+            Nationality: <br />
+            <input
+              type="text"
+              placeholder="Nationality"
+              className="mt-2 rounded-md bg-gray-300 px-3 py-2 text-xl text-black outline-none"
+              value={formData.nationality}
+              onChange={handleInputChange}
+              name="nationality"
+            />
           </label>
           <br />
           <label>
-            Message:<br />
+            Message:
+            <br />
             <textarea
               name="message"
               value={formData.message}
               placeholder="Message"
               onChange={handleInputChange}
-              className="bg-gray-300 mt-2 text-black text-xl px-3 py-2 outline-none rounded-md" />
+              className="mt-2 rounded-md bg-gray-300 px-3 py-2 text-xl text-black outline-none"
+            />
           </label>
           <br />
-          <Button BtnTitle="submit" type="submit" className="bg-orange-500 px-5 py-2 rounded-lg" />
-
+          <Button
+            BtnTitle="submit"
+            type="submit"
+            className="rounded-lg bg-orange-500 px-5 py-2"
+          />
         </form>
       </div>
     </section>
