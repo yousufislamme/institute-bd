@@ -11,7 +11,7 @@ import Search from "./Search";
 const salsa = Salsa({ weight: "400", subsets: ["latin"] });
 const roboto = Roboto({ weight: "400", subsets: ["latin"] });
 
-const Hero = () => {
+const Hero = ({ item }) => {
   const { handleSearch, filteredStudents, searchQuery } = useContext(Context);
 
   return (
@@ -27,7 +27,7 @@ const Hero = () => {
           {filteredStudents.map((item) =>
             searchQuery > item.studentName ? (
               <div className="flex rounded-b-lg px-3 py-2" key={item._id}>
-                <Link href={item._id}>
+                <Link href={`users/${item._id}`}>
                   Name: {item.studentName} | {item.email}
                 </Link>
               </div>
