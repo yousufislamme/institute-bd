@@ -1,74 +1,53 @@
+// Hero.js
 "use client";
 
 import { Roboto, Salsa } from "next/font/google";
-import Image from "next/image";
+import Link from "next/link";
+import { useContext } from "react";
 import Button from "./Button";
+import { Context } from "./Context/Context";
 import Search from "./Search";
-import Girl from "./img/girl.png";
-import RightGirl from "./img/rightGirl.png";
+
 const salsa = Salsa({ weight: "400", subsets: ["latin"] });
 const roboto = Roboto({ weight: "400", subsets: ["latin"] });
 
 const Hero = () => {
+  const { handleSearch, filteredStudents, searchQuery } = useContext(Context);
+
   return (
-    <div className="flex flex-col items-center justify-center bg-purple-50 px-10 pb-10 pt-10">
-      <Search className="mb-5 w-[400px] border-2 px-10 py-2" />
+    <div className="flex h-screen flex-col items-center justify-center bg-purple-50 px-10 pb-10 pt-10">
+      <div className="relative">
+        <Search
+          onChange={handleSearch}
+          placeholder="Search by name or email"
+          value={searchQuery}
+          className="mb-5 w-[400px] border-2 px-10 py-2"
+        />
+        <div className="top-22 absolute w-full bg-slate-300">
+          {filteredStudents.map((item) =>
+            searchQuery > item.studentName ? (
+              <div className="flex rounded-b-lg px-3 py-2" key={item._id}>
+                <Link href={item._id}>
+                  Name: {item.studentName} | {item.email}
+                </Link>
+              </div>
+            ) : null,
+          )}
+        </div>
+      </div>
       <h1 className={`${salsa.className} sm:text-4xl lg:text-[50px]`}>
-        Better Future For Your Kinds <span className="text-purple-800">.</span>{" "}
+        Better Future For Your Kids <span className="text-purple-800">.</span>{" "}
       </h1>
       <p
-        className={`${roboto.className}bg-white my-5 rounded-sm px-2 py-1 shadow-lg`}
+        className={`${roboto.className} my-5 rounded-sm bg-white px-2 py-1 shadow-lg`}
       >
-        Let the child be the director, and the actor in his won play
+        Let the child be the director, and the actor in his own play
       </p>
       <Button
         className="my-10 mt-5 rounded-full bg-purple-800 px-10 py-3 font-semibold text-white shadow-xl"
         BtnTitle="Get Start"
         href="/dashboard/addStudent"
-      ></Button>
-      <div className="mt-5 grid w-full grid-cols-10 gap-5">
-        {/* col 1 */}
-        <div className="col-span-3">
-          <Image
-            className="h-[300px] w-full object-cover"
-            src={Girl}
-            width={800}
-            height={800}
-          />
-        </div>
-        {/* col 2 */}
-        <div className="col-span-4">
-          <p>
-            {" "}
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste ullam
-            beatae repellat dolores, ratione quidem. Lorem ipsum dolor sit.
-          </p>
-          <div className="grid grid-cols-2 grid-rows-2">
-            <div className="col-start-1 mt-10 w-56">
-              <h3 className={`${salsa.className} text-3xl`}>
-                7.5K <span className="text-purple-800">+</span>
-              </h3>
-              <p>Total active students taking gifted courses.</p>
-            </div>
-            <div className="col-start-1"></div>
-            <div className="col-start-2 mt-10 w-56">
-              <h3 className={`${salsa.className} text-3xl`}>
-                50 <span className="text-purple-800">+</span>
-              </h3>
-              <p>Available field programs and increasing.</p>
-            </div>
-          </div>
-        </div>
-        {/* col 3 */}
-        <div className="col-span-3">
-          <Image
-            className="w-full object-cover object-top"
-            src={RightGirl}
-            width={800}
-            height={800}
-          />
-        </div>
-      </div>
+      />
     </div>
   );
 };

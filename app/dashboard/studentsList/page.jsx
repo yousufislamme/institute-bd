@@ -1,50 +1,16 @@
 "use client";
+import { Context } from "@/components/Context/Context";
 import Loading from "@/components/Loading";
-import { useEffect, useState } from "react";
+import Search from "@/components/Search";
+import { useContext, useState } from "react";
 import { CiEdit } from "react-icons/ci";
 import { MdDeleteOutline } from "react-icons/md";
 
 const StudentsList = () => {
-  const [students, setStudents] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [searchQuery, setSearchQuery] = useState("");
   const [isEditing, setIsEditing] = useState(false);
   const [currentStudent, setCurrentStudent] = useState(null);
-
-  useEffect(() => {
-    fetch(
-      "https://school-server-git-main-yousufislammes-projects.vercel.app/users",
-    )
-      .then((res) => res.json())
-      .then((data) => {
-        setStudents(data);
-        setLoading(false);
-        console.log("show students data::: ", data);
-      })
-      .catch((error) => {
-        console.error("Error fetching data:", error);
-        setLoading(false);
-      });
-  }, []);
-
-  const handleSearch = (event) => {
-    setSearchQuery(event.target.value);
-  };
-
-  const filteredStudents = students.filter((student) => {
-    if (!student.studentName) {
-      return false;
-    }
-
-    const studentNameLower = student.studentName.toLowerCase();
-    const studentEmailLower = student.email?.toLowerCase() || "";
-    const searchQueryLower = searchQuery.toLowerCase();
-
-    return (
-      studentNameLower.includes(searchQueryLower) ||
-      studentEmailLower.includes(searchQueryLower)
-    );
-  });
+  const { filteredStudents, handleSearch, searchQuery, loading, setStudents } =
+    useContext(Context);
 
   const handleDelete = (_id) => {
     fetch(
@@ -119,7 +85,14 @@ const StudentsList = () => {
     <div>
       <h2>Students information show...</h2>
       <div className="flex justify-center">
-        <input
+        {/* <input
+          type="text"
+          placeholder="Search by name or email"
+          value={searchQuery}
+          onChange={handleSearch}
+          className="m-3 w-[500px] rounded-lg border px-5 py-2 outline-none"
+        /> */}
+        <Search
           type="text"
           placeholder="Search by name or email"
           value={searchQuery}
@@ -127,6 +100,7 @@ const StudentsList = () => {
           className="m-3 w-[500px] rounded-lg border px-5 py-2 outline-none"
         />
       </div>
+      {/* popup edit and delete */}
       <div>
         {loading ? (
           <div className="flex items-center justify-center">
@@ -172,7 +146,6 @@ const StudentsList = () => {
           ))
         )}
       </div>
-
       {isEditing && currentStudent && (
         <div className="fixed inset-0 flex items-center justify-center overflow-scroll bg-black bg-opacity-50">
           <div className="rounded-lg bg-white p-5">
