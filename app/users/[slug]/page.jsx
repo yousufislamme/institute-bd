@@ -1,3 +1,4 @@
+
 const SinglePage = ({ item }) => {
   // const {} = useContext(Context);
   console.log(item, "iiiii");
@@ -10,3 +11,4 @@ const SinglePage = ({ item }) => {
 };
 
 export default SinglePage;
+
