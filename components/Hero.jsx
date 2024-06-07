@@ -11,7 +11,7 @@ import Search from "./Search";
 const salsa = Salsa({ weight: "400", subsets: ["latin"] });
 const roboto = Roboto({ weight: "400", subsets: ["latin"] });
 
-const Hero = () => {
+const Hero = ({ item }) => {
   const { handleSearch, filteredStudents, searchQuery } = useContext(Context);
 
   return (
