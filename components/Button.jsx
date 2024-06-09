@@ -1,9 +1,12 @@
+"use client";
 
-const Button = ({BtnTitle,type, className}) => {
+const Button = ({ BtnTitle, href, type, className, onClick }) => {
   return (
-    <button type={type} className={className}>{BtnTitle}</button>
-  )
+    <button onClick={onClick} type={type} className={className}>
+      {/* <Link href={href || null}>{BtnTitle}</Link> */}
+      {BtnTitle}
+    </button>
+  );
+};
 
-}
-
-export default Button
+export default Button;
