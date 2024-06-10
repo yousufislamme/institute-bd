@@ -57,6 +57,10 @@ This project is the website for [BD School], designed to provide students, paren
    ```bash
    npm install
    ```
+4. Run
+    ```
+    npm run dev
+    ```  
 4. Set up the database and update the configuration file with your database credentials.
 
 ## Contributing
