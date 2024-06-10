@@ -1,9 +1,24 @@
 # [BD School] Website
 
 Welcome to the official GitHub repository for the [BD School] website!
+
 ## BackEnd Server
+
 [Server Link ](https://github.com/rxtheme/school-server)
 
+## How to create and PR
+
+At first you need to go to on `main` branch
+
+```
+git checkout main
+```
+
+Create a `Branch`
+
+```
+git checkout -b branch-name
+```
 
 ## Overview
 
@@ -25,23 +40,23 @@ This project is the website for [BD School], designed to provide students, paren
 
 - **HTML5 & CSS3:** For structuring and styling the web pages.
 - **JavaScript:** To enhance interactivity and functionality.
- backend logic.
+  backend logic.
 - **MongoDB:** To manage the database.
 
 ## Setup and Installation
 
 1. Clone the repository:
-    ```bash
-    git clone https://github.com/your-username/school-website.git
-    ```
+   ```bash
+   git clone https://github.com/your-username/school-website.git
+   ```
 2. Navigate to the project directory:
-    ```bash
-    cd school-website
-    ```
+   ```bash
+   cd school-website
+   ```
 3. Install dependencies (if applicable):
-    ```bash
-    npm install
-    ```
+   ```bash
+   npm install
+   ```
 4. Set up the database and update the configuration file with your database credentials.
 
 ## Contributing
