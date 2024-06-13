@@ -39,6 +39,16 @@ const SideBar = () => {
               Students List
             </Link>
           </li>
+          <li>
+            <Link
+              href="/dashboard/notice"
+              className={`rounded-md px-3 py-2 hover:bg-slate-500 ${
+                pathname === "/dashboard/notice" ? "bg-slate-500" : ""
+              }`}
+            >
+              Notice
+            </Link>
+          </li>
         </ul>
       </nav>
     </div>
