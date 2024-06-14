@@ -21,13 +21,16 @@ const WriteBlog = () => {
     e.preventDefault();
     console.log(blogData);
     try {
-      const response = await fetch("http://localhost:5000/blog", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
+      const response = await fetch(
+        "https://school-server-git-main-yousufislammes-projects.vercel.app/blog",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(blogData),
         },
-        body: JSON.stringify(blogData),
-      });
+      );
 
       if (response.ok) {
         const responseData = await response.json();
