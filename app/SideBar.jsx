@@ -1,8 +1,9 @@
 "use client";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { CiStickyNote, CiViewList } from "react-icons/ci";
+import { CiEdit, CiStickyNote, CiViewList } from "react-icons/ci";
 import { FaRegAddressCard } from "react-icons/fa";
+
 const SideBar = () => {
   const pathname = usePathname();
 
@@ -42,6 +43,16 @@ const SideBar = () => {
               }`}
             >
               <CiStickyNote /> Notices
+            </Link>
+          </li>
+          <li>
+            <Link
+              href="/dashboard/write-blog"
+              className={`flex items-center gap-2 rounded-md px-3 py-2 hover:bg-slate-500 ${
+                pathname === "/dashboard/write-blog" ? "bg-slate-500" : ""
+              }`}
+            >
+              <CiEdit /> Write a Blog
             </Link>
           </li>
         </ul>
