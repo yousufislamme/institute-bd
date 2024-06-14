@@ -1,12 +1,12 @@
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
-import NoticBoard from "@/components/NoticBoard";
+import NoticeBoard from "@/components/NoticeBoard";
 
 export default function Home() {
   return (
     <main>
       <Hero />
-      <NoticBoard />
+      <NoticeBoard />
     </main>
   );
 }

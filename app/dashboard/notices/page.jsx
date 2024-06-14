@@ -1,14 +1,14 @@
 "use client";
 import { useState } from "react";
 
-const Notice = () => {
+const Notices = () => {
   const [title, setTitle] = useState("");
   const [details, setDetails] = useState("");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const notice = { title, details };
+    const notices = { title, details };
 
     try {
       const response = await fetch(
@@ -18,7 +18,7 @@ const Notice = () => {
           headers: {
             "Content-Type": "application/json",
           },
-          body: JSON.stringify(notice),
+          body: JSON.stringify(notices),
         },
       );
 
@@ -60,4 +60,4 @@ const Notice = () => {
   );
 };
 
-export default Notice;
+export default Notices;
