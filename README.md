@@ -67,6 +67,7 @@ This project is the website for [BD School], designed to provide students, paren
 
 We welcome contributions to improve the website. Please fork the repository and submit a pull request with your changes. Ensure your code follows our [contribution guidelines](link-to-contribution-guidelines).
 
+[![](https://opencollective.com/rxtheme/contributors.svg?width=890&button=false)](https://github.com/rxtheme/institute-bd/graphs/contributors)
 ## License
 
 This project is licensed under the MIT License. See the [LICENSE](link-to-license) file for details.
