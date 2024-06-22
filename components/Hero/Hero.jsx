@@ -4,9 +4,9 @@
 import { Roboto, Salsa } from "next/font/google";
 import Link from "next/link";
 import { useContext } from "react";
-import Button from "./Button";
-import { Context } from "./Context/Context";
-import Search from "./Search";
+import Button from "../Button";
+import { Context } from "../Context/Context";
+import Search from "../Search";
 
 const salsa = Salsa({ weight: "400", subsets: ["latin"] });
 const roboto = Roboto({ weight: "400", subsets: ["latin"] });
@@ -15,13 +15,13 @@ const Hero = ({ item }) => {
   const { handleSearch, filteredStudents, searchQuery } = useContext(Context);
 
   return (
-    <div className="flex h-screen flex-col items-center justify-center bg-purple-50 px-10 pb-10 pt-10">
+    <div className="flex flex-col items-center justify-center bg-purple-50 px-10 pb-10 pt-10">
       <div className="relative">
         <Search
           onChange={handleSearch}
           placeholder="Search by name or email"
           value={searchQuery}
-          className="mb-5 w-[400px] border-2 px-10 py-2"
+          className="mb-5 mt-20 w-[400px] border-2 px-10 py-2"
         />
         <div className="top-22 absolute w-full bg-slate-300">
           {filteredStudents.map((item) =>
@@ -44,7 +44,7 @@ const Hero = ({ item }) => {
         Let the child be the director, and the actor in his own play
       </p>
       <Button
-        className="my-10 mt-5 rounded-full bg-purple-800 px-10 py-3 font-semibold text-white shadow-xl"
+        className="my-10 mt-5 rounded-full bg-purple-800 px-10 py-3 font-semibold text-white shadow-xl hover:shadow-lg"
         BtnTitle="Get Start"
         href="/dashboard/addStudent"
       />

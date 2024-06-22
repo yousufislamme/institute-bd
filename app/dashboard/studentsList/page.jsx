@@ -85,13 +85,6 @@ const StudentsList = () => {
     <div>
       <h2>Students information show...</h2>
       <div className="flex justify-center">
-        {/* <input
-          type="text"
-          placeholder="Search by name or email"
-          value={searchQuery}
-          onChange={handleSearch}
-          className="m-3 w-[500px] rounded-lg border px-5 py-2 outline-none"
-        /> */}
         <Search
           type="text"
           placeholder="Search by name or email"
