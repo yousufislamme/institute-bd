@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
+import Loading from "./Loading";
 
 const NoticeBoard = () => {
   const [Notices, setNotices] = useState([]);
@@ -21,29 +22,31 @@ const NoticeBoard = () => {
       });
   }, []);
   return (
-    <div className="mx-auto my-5 w-[700px] rounded-lg bg-yellow-200 p-6 shadow-md">
-      <h2 className="mb-4 text-2xl font-semibold">Notice Board</h2>
-      <ul className="space-y-2">
-        <li className="flex items-center">
-          <div className="text-gray-700">
-            <strong>Important:</strong> The school will be closed on Monday, May
-            27, 2024 due to a holiday.
+    <div className="flex w-full justify-end px-20">
+      <div className="mx-right my-5 w-[400px] rounded-lg bg-yellow-200 p-6 shadow-md">
+        <h2 className="mb-4 text-2xl font-semibold">Notice Board</h2>
+        <ul className="space-y-2">
+          <li className="flex items-center">
+            <div className="text-gray-700">
+              <strong>Important:</strong> The school will be closed on Monday,
+              May 27, 2024 due to a holiday.
+            </div>
+          </li>
+          <li className="flex items-center">
+            <div className="text-gray-700">
+              <strong>Reminder:</strong> Please submit your assignments on time.
+            </div>
+          </li>
+        </ul>
+        {currentNotice ? (
+          <div>
+            <p>{currentNotice.title}</p>
+            <p>{currentNotice.details}</p>
           </div>
-        </li>
-        <li className="flex items-center">
-          <div className="text-gray-700">
-            <strong>Reminder:</strong> Please submit your assignments on time.
-          </div>
-        </li>
-      </ul>
-      {currentNotice ? (
-        <div>
-          <p>{currentNotice.title}</p>
-          <p>{currentNotice.details}</p>
-        </div>
-      ) : (
-        <p>Loading...</p>
-      )}
+        ) : (
+          <Loading statusColor={`fill-red-600`} />
+        )}
+      </div>
     </div>
   );
 };

@@ -21,7 +21,9 @@ const Blog = () => {
 
       {blogs.map((post) => (
         <div>
-          <p key={post._id}>{post.blogTitle}</p>
+          <h4 className="font-bold" key={post._id}>
+            {post.blogTitle}
+          </h4>
           <p key={post._id}>{post.blogBody}</p>
         </div>
       ))}
