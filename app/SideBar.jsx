@@ -55,6 +55,16 @@ const SideBar = () => {
               <CiEdit /> Write a Blog
             </Link>
           </li>
+          <li>
+            <Link
+              href="/dashboard/addRole"
+              className={`flex items-center gap-2 rounded-md px-3 py-2 hover:bg-slate-500 ${
+                pathname === "/dashboard/addRole" ? "bg-slate-500" : ""
+              }`}
+            >
+              Add Role
+            </Link>
+          </li>
         </ul>
       </nav>
     </div>

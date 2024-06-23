@@ -9,7 +9,7 @@ const Login = () => {
   return (
     <div className="flex h-screen w-full flex-col items-center justify-center">
       <p>
-        Name: <span className="font-bold">{users.displayName}</span>
+        Full Name: <span className="font-bold">{users.displayName}</span>
       </p>
       <p>
         Email: <span className="font-bold">{users.email}</span>
