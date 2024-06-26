@@ -1,18 +1,13 @@
-"use client";
-import { useEffect, useState } from "react";
+// "use client";
+// import { useEffect, useState } from "react";
 import HeadingContents from "../HeadingContents";
 import TeacherCard from "./TeacherCard";
+import { teacherApi } from "@/app/api/api";
 
-const Teachers = () => {
-  const [teachersData, setTeachersData] = useState([]);
-  useEffect(() => {
-    fetch("https://school-server-phi.vercel.app/teachers")
-      .then((res) => res.json())
-      .then((data) => {
-        console.log(data);
-        setTeachersData(data);
-      });
-  }, []);
+const Teachers = async () => {
+  
+  const teachersData = await teacherApi();
+
   console.log(teachersData);
   return (
     <section className="block bg-green-50">
@@ -25,10 +20,7 @@ const Teachers = () => {
       />
       <div className="mt-5 grid grid-cols-2 gap-5 px-4 py-5 md:grid-cols-3 lg:grid-cols-4 lg:px-20">
         {teachersData.map((item) => (
-          <TeacherCard
-            teacherName={item.teacherName}
-            teacherDesc={item.teacherBody}
-          />
+          <TeacherCard key={item._id} item={item} />
         ))}
       </div>
     </section>

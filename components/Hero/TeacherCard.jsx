@@ -1,12 +1,11 @@
-"use client";
-import Image from "next/image";
+const TeacherCard = ({ item }) => {
+  const { teacherName, teacherDesc, } = item;
 
-const TeacherCard = ({ teacherName, teacherDesc, teacherPic }) => {
   return (
     <>
       <div className="h-[300px] rounded-sm border-2">
         <div className="flex h-[200px] items-center justify-center bg-slate-600 object-cover">
-          <Image width={200} height={200} src={teacherPic} />
+          <img src="https://images.pexels.com/photos/63238/pexels-photo-63238.jpeg" />
         </div>
         <div className="px-2 py-1">
           <h2 className="text-lg font-semibold">{teacherName}</h2>
