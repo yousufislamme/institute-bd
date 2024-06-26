@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useState } from "react";
 
 const Teachers = () => {
@@ -27,7 +28,15 @@ const Teachers = () => {
   };
   return (
     <div className="p-5">
-      <h1>Teachers</h1>
+      <div className="flex gap-3">
+        <h1>Teachers</h1>
+        <Link
+          className="text-blue-700 underline"
+          href="/dashboard/addTeachers/teachersView"
+        >
+          View
+        </Link>
+      </div>
       <form className="" onSubmit={handleTeacherAdd}>
         <div className="mt-10 flex w-[600px] flex-col gap-2">
           <input
