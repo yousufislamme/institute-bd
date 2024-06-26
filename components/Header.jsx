@@ -64,6 +64,9 @@ const Header = () => {
             <Link className="px-1 py-2" href="/dashboard">
               Dashboard
             </Link>
+            <Link className="px-1 py-2" href="/login">
+              Login
+            </Link>
             <div className="relative">
               <button className="px-1 py-2" onClick={handleDropdownToggle}>
                 {users ? "User Menu" : "Login"}
