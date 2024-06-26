@@ -1,20 +1,18 @@
 "use client";
-import { useEffect, useState } from "react";
+import Image from "next/image";
 
-const TeacherCard = () => {
-  const [teachersData, setTeachersData] = useState([]);
-  useEffect(() => {
-    fetch("http://localhost:5000/teachers")
-      .then((res) => res.json())
-      .then((data) => {
-        console.log(data);
-        setTeachersData(data);
-      });
-  }, []);
+const TeacherCard = ({ teacherName, teacherDesc, teacherPic }) => {
   return (
     <>
       <div className="h-[300px] rounded-sm border-2">
-        <div className="h-[200px] bg-slate-600"></div>
+        <div className="flex h-[200px] items-center justify-center bg-slate-600 object-cover">
+          <Image width={200} height={200} src={teacherPic} />
+        </div>
+        <div className="px-2 py-1">
+          <h2 className="text-lg font-semibold">{teacherName}</h2>
+          <hr />
+          <p className="text-sm">{teacherDesc}</p>
+        </div>
       </div>
     </>
   );
