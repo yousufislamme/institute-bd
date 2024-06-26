@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 const TeachersView = () => {
   const [teachersData, setTeachersData] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/teachers")
+    fetch("https://school-server-phi.vercel.app/teachers")
       .then((res) => res.json())
       .then((data) => {
         setTeachersData(data);

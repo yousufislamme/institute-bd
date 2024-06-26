@@ -18,7 +18,7 @@ const Teachers = () => {
 
   const handleTeacherAdd = (e) => {
     e.preventDefault();
-    fetch("http://localhost:5000/teachers", {
+    fetch("https://school-server-phi.vercel.app/teachers", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
