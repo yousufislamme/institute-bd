@@ -47,22 +47,27 @@ This project is the website for [BD School], designed to provide students, paren
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/school-website.git
+   git clone https://github.com/rxtheme/institute-bd.git
    ```
 2. Navigate to the project directory:
    ```bash
-   cd school-website
+   cd institute-bd
    ```
 3. Install dependencies (if applicable):
    ```bash
    npm install
    ```
+4. Run
+    ```
+    npm run dev
+    ```  
 4. Set up the database and update the configuration file with your database credentials.
 
 ## Contributing
 
 We welcome contributions to improve the website. Please fork the repository and submit a pull request with your changes. Ensure your code follows our [contribution guidelines](link-to-contribution-guidelines).
 
+[![](https://opencollective.com/rxtheme/contributors.svg?width=890&button=false)](https://github.com/rxtheme/institute-bd/graphs/contributors)
 ## License
 
 This project is licensed under the MIT License. See the [LICENSE](link-to-license) file for details.
