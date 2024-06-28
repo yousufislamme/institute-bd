@@ -12,8 +12,9 @@ const salsa = Salsa({ weight: "400", subsets: ["latin"] });
 const roboto = Roboto({ weight: "400", subsets: ["latin"] });
 
 const Hero = ({ item }) => {
-  const { handleSearch, filteredStudents, searchQuery } = useContext(Context);
-
+  const { handleSearch, filteredStudents, users, searchQuery } =
+    useContext(Context);
+  console.log("my user:::", users);
   return (
     <div className="flex flex-col items-center justify-center bg-purple-50 px-10 pb-10 pt-10">
       <div className="relative">
