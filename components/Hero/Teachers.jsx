@@ -1,11 +1,10 @@
 // "use client";
 // import { useEffect, useState } from "react";
+import { teacherApi } from "@/app/api/api";
 import HeadingContents from "../HeadingContents";
 import TeacherCard from "./TeacherCard";
-import { teacherApi } from "@/app/api/api";
 
 const Teachers = async () => {
-  
   const teachersData = await teacherApi();
 
   console.log(teachersData);

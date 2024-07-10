@@ -1,8 +1,10 @@
 import HeadingContents from "../HeadingContents";
+import ColorFullAccordion from "./Accordion";
 
 const FAQ = () => {
   return (
-    <div className="h-screen bg-violet-50">
+    <div className="bg-violet-50">
+      {/* heading title and description */}
       <HeadingContents
         titleText="FAQ"
         descText="Learn more our basic information."
@@ -10,6 +12,9 @@ const FAQ = () => {
         descColor="text-violet-900"
         solidColor="bg-violet-600"
       />
+      <div className="mx-auto w-[600px]">
+        <ColorFullAccordion />
+      </div>
     </div>
   );
 };

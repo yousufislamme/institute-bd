@@ -14,7 +14,6 @@ const roboto = Roboto({ weight: "400", subsets: ["latin"] });
 const Hero = ({ item }) => {
   const { handleSearch, filteredStudents, users, searchQuery } =
     useContext(Context);
-  console.log("my user:::", users);
   return (
     <div className="flex flex-col items-center justify-center bg-purple-50 px-10 pb-10 pt-10">
       <div className="relative">
@@ -37,7 +36,8 @@ const Hero = ({ item }) => {
         </div>
       </div>
       <h1 className={`${salsa.className} sm:text-4xl lg:text-[50px]`}>
-        Better Future For Your Kids  saadaf<span className="text-purple-800">.</span>{" "}
+        Better Future For Your Kids saadaf
+        <span className="text-purple-800">.</span>{" "}
       </h1>
       <p
         className={`${roboto.className} my-5 rounded-sm bg-white px-2 py-1 shadow-lg`}

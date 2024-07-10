@@ -5,12 +5,19 @@ import Search from "@/components/Search";
 import { useContext, useState } from "react";
 import { CiEdit } from "react-icons/ci";
 import { MdDeleteOutline } from "react-icons/md";
+import { toast } from "sonner";
 
 const StudentsList = () => {
   const [isEditing, setIsEditing] = useState(false);
   const [currentStudent, setCurrentStudent] = useState(null);
-  const { filteredStudents, handleSearch, searchQuery, loading, setStudents } =
-    useContext(Context);
+  const {
+    filteredStudents,
+    handleSearch,
+    searchQuery,
+    loading,
+    setStudents,
+    students,
+  } = useContext(Context);
 
   const handleDelete = (_id) => {
     fetch(
@@ -24,7 +31,7 @@ const StudentsList = () => {
         setStudents((prev) => prev.filter((student) => student._id !== _id));
         console.log("Deleted data:", dataDelete);
         if (dataDelete.acknowledged) {
-          alert("delete successful");
+          toast("delete successful");
         }
       })
       .catch((error) => {

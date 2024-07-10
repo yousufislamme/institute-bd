@@ -3,6 +3,7 @@
 import Button from "@/components/Button";
 import { Salsa } from "next/font/google";
 import { useState } from "react";
+import { toast } from "sonner";
 const salsa = Salsa({ weight: "400", subsets: ["latin"] });
 
 const AddStudent = () => {
@@ -63,9 +64,9 @@ const AddStudent = () => {
 
       const data = await response.json();
       if (data.acknowledged) {
-        alert("Student added.");
+        toast("New student is added.");
       } else {
-        alert("Something went wrong.");
+        toast("we can't added new student.");
       }
 
       console.log("Response data:", data);
@@ -84,7 +85,7 @@ const AddStudent = () => {
       <h1>Student page.</h1>
       <div className="flex w-full justify-center">
         <h2 className={`${salsa.className} text-3xl`}>
-          AddStudent Information<span className="text-purple-800">.</span>{" "}
+          AddStudent Information <span className="text-purple-800">.</span>
         </h2>
       </div>
 

@@ -1,5 +1,5 @@
 const TeacherCard = ({ item }) => {
-  const { teacherName, teacherDesc, } = item;
+  const { teacherName, teacherBody } = item;
 
   return (
     <>
@@ -10,7 +10,7 @@ const TeacherCard = ({ item }) => {
         <div className="px-2 py-1">
           <h2 className="text-lg font-semibold">{teacherName}</h2>
           <hr />
-          <p className="text-sm">{teacherDesc}</p>
+          <p className="text-sm">{teacherBody}</p>
         </div>
       </div>
     </>

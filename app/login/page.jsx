@@ -5,11 +5,14 @@ import { Context } from "@/components/Context/Context";
 import { useContext } from "react";
 
 const Login = () => {
-  const { handleLoginGoogle, handleSingOut, users } = useContext(Context);
+  const { handleLoginGoogle, loading, handleSingOut, users } =
+    useContext(Context);
   console.log(users);
   return (
     <div className="flex h-screen w-full flex-col items-center justify-center space-y-8">
-      {users.length === 0 ? null : (
+      {loading ? (
+        <p>Loading...</p>
+      ) : users.length === 0 ? null : (
         <div>
           <div className="flex max-w-xs flex-col justify-center rounded-xl bg-gray-50 p-6 text-gray-800 shadow-md sm:px-12">
             <img
@@ -88,8 +91,7 @@ const Login = () => {
           </div>
         </div>
       )}
-
-      {users.emailVerified == true ? (
+      {users.emailVerified === true ? (
         <Button
           onClick={handleSingOut}
           BtnTitle="Log out"

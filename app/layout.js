@@ -3,6 +3,7 @@ import "./globals.css";
 import Header from "@/components/Header";
 import { ContextProvider } from "@/components/Context/Context";
 import Footer from "@/components/Footer";
+import { Toaster } from "@/components/ui/sonner"
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,6 +19,7 @@ export default function RootLayout({ children }) {
         <ContextProvider>
           <Header />
           {children}
+          <Toaster />
           <Footer />
         </ContextProvider>
       </body>
