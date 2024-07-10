@@ -14,7 +14,10 @@ export const ContextProvider = ({ children }) => {
   const [users, setUsers] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
   const [students, setStudents] = useState([]);
+  const [teachers, setTeachers] = useState([]);
+  const [faq, setFaq] = useState([]);
   const [loading, setLoading] = useState(true);
+
 
   // Ensure getAuth is called with the initialized app
   const auth = getAuth(app);
@@ -26,6 +29,8 @@ export const ContextProvider = ({ children }) => {
         const user = result.user; // Ensure this is singular as result.user is a single user object
         setUsers(user); // Update state with the user object
         localStorage.setItem("users", JSON.stringify(user));
+        setLoading(false);
+
       })
       .catch((error) => {
         const errorMessage = error.message;
@@ -40,6 +45,7 @@ export const ContextProvider = ({ children }) => {
         // Sign-out successful.
         setUsers("");
         localStorage.setItem("users", JSON.stringify(""));
+        setLoading(false);
       })
       .catch((error) => {
         // An error happened.
@@ -49,7 +55,7 @@ export const ContextProvider = ({ children }) => {
     setUsers(JSON.parse(localStorage.getItem("users")) || []);
   }, []);
 
-  // data fetcching
+  // data fetching
   useEffect(() => {
     fetch(
       "https://school-server-git-main-yousufislammes-projects.vercel.app/users",
@@ -63,6 +69,32 @@ export const ContextProvider = ({ children }) => {
         console.error("Error fetching data:", error);
         setLoading(false);
       });
+  }, []);
+
+  useEffect(() => {
+    fetch("https://school-server-git-main-yousufislammes-projects.vercel.app/teachers")
+      .then((res) => res.json())
+      .then((data) => {
+        setTeachers(data);
+        setLoading(false);
+      })
+      .catch((error) => {
+        console.log('teacher fetch api:::', error);
+      })
+
+  }, [])
+
+  useEffect(() => {
+    fetch("https://school-server-git-main-yousufislammes-projects.vercel.app/faq")
+      .then((res) => res.json())
+      .then((data) => {
+        setFaq(data);
+        setLoading(false);
+      })
+      .catch((error) => {
+        console.error("faq deleting error:::", error);
+      })
+
   }, []);
 
   // search query
@@ -89,13 +121,17 @@ export const ContextProvider = ({ children }) => {
       value={{
         handleLoginGoogle,
         handleSingOut,
+        setTeachers,
+        setStudents,
+        handleSearch,
         users,
         filteredStudents,
         searchQuery,
-        handleSearch,
+        teachers,
+        setFaq,
+        faq,
         loading,
         students,
-        setStudents,
       }}
     >
       {children}

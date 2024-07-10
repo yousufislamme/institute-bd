@@ -2,8 +2,9 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { CiEdit, CiStickyNote, CiViewList } from "react-icons/ci";
-import { FaRegAddressCard } from "react-icons/fa";
+import { FaQuoteLeft, FaRegAddressCard } from "react-icons/fa";
 import { IoIosPersonAdd } from "react-icons/io";
+import { IoSettingsSharp } from "react-icons/io5";
 import { TbArrowsRandom } from "react-icons/tb";
 
 const SideBar = () => {
@@ -77,6 +78,28 @@ const SideBar = () => {
             >
               <TbArrowsRandom />
               Add Role
+            </Link>
+          </li>
+          <li>
+            <Link
+              href="/dashboard/faq"
+              className={`flex items-center gap-2 rounded-md px-3 py-2 hover:bg-slate-500 ${
+                pathname === "/dashboard/faq" ? "bg-slate-500" : ""
+              }`}
+            >
+              <FaQuoteLeft />
+              Add FAQ
+            </Link>
+          </li>
+          <li>
+            <Link
+              href="/dashboard/setting"
+              className={`flex items-center gap-2 rounded-md px-3 py-2 hover:bg-slate-500 ${
+                pathname === "/dashboard/setting" ? "bg-slate-500" : ""
+              }`}
+            >
+              <IoSettingsSharp />
+              Setting
             </Link>
           </li>
         </ul>

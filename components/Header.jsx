@@ -1,5 +1,4 @@
 "use client";
-import Login from "@/app/login/page";
 import Link from "next/link";
 import { useContext, useEffect, useRef, useState } from "react";
 import { Context } from "./Context/Context";
@@ -10,7 +9,6 @@ const Header = () => {
   const [isDropdownVisible, setIsDropdownVisible] = useState(false);
   const [lastScrollY, setLastScrollY] = useState(0);
   const dropdownRef = useRef(null);
-
   const handleScroll = () => {
     if (window.scrollY > lastScrollY) {
       setIsVisible(false); // Scroll down
@@ -61,36 +59,22 @@ const Header = () => {
             <Link className="px-1 py-2" href="/about">
               About
             </Link>
-            <Link className="px-1 py-2" href="/dashboard">
-              Dashboard
-            </Link>
+
+            {users.email ? (
+              <Link className="px-1 py-2" href="/dashboard">
+                Dashboard
+              </Link>
+            ) : null}
+
             <Link className="px-1 py-2" href="/login">
-              Login
-            </Link>
-            <div className="relative">
-              <button className="px-1 py-2" onClick={handleDropdownToggle}>
-                {users ? "User Menu" : "Login"}
-              </button>
-              {isDropdownVisible && (
-                <div
-                  ref={dropdownRef}
-                  className="absolute right-0 mt-2 w-48 rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5"
-                >
-                  <div className="py-1">
-                    {users ? (
-                      <Link
-                        href="/profile"
-                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                      >
-                        Profile
-                      </Link>
-                    ) : (
-                      <Login />
-                    )}
-                  </div>
-                </div>
+              {!users ? (
+                <p>Login</p>
+              ) : (
+                <p className="capitalize text-purple-500">
+                  {users.displayName}
+                </p>
               )}
-            </div>
+            </Link>
           </div>
         </div>
       </header>

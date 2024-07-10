@@ -2,12 +2,14 @@
 
 import Link from "next/link";
 import { useState } from "react";
+import { toast } from "sonner";
 
 const Teachers = () => {
   const [teacherData, setTeacherData] = useState({
     teacherName: "",
     teacherBody: "",
   });
+
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setTeacherData({
@@ -16,16 +18,37 @@ const Teachers = () => {
     });
   };
 
-  const handleTeacherAdd = (e) => {
+  const handleTeacherAdd = async (e) => {
     e.preventDefault();
-    fetch("https://school-server-phi.vercel.app/teachers", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(teacherData),
-    });
+
+    try {
+      const response = await fetch(
+        "https://school-server-phi.vercel.app/teachers",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(teacherData),
+        },
+      );
+
+      if (response.ok) {
+        toast.success("Teacher is added.");
+        // Clear input fields
+        setTeacherData({
+          teacherName: "",
+          teacherBody: "",
+        });
+      } else {
+        toast.error("Failed to add teacher.");
+      }
+    } catch (error) {
+      console.error("Error adding teacher:", error);
+      toast.error("An error occurred while adding the teacher.");
+    }
   };
+
   return (
     <div className="p-5">
       <div className="flex gap-3">
@@ -37,7 +60,7 @@ const Teachers = () => {
           View
         </Link>
       </div>
-      <form className="" onSubmit={handleTeacherAdd}>
+      <form onSubmit={handleTeacherAdd}>
         <div className="mt-10 flex w-[600px] flex-col gap-2">
           <input
             onChange={handleInputChange}
