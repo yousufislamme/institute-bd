@@ -63,9 +63,21 @@ This project is the website for [BD School], designed to provide students, paren
     ```  
 4. Set up the database and update the configuration file with your database credentials.
 
-## Contributing
-
-We welcome contributions to improve the website. Please fork the repository and submit a pull request with your changes. Ensure your code follows our [contribution guidelines](link-to-contribution-guidelines).
+## Contributors
+  [![Star on GitHub](https://img.shields.io/github/stars/saadafahmed45/hotel-relex-client.svg?style=social)](https://github.com/saadafahmed45/hotel-relex-client/stargazers)
+ <table>
+  <tbody>
+    <tr>
+      <td align="center">
+        <img src="https://avatars.githubusercontent.com/u/71249987?v=3?s=100" width="100px;" alt="Its Md Yousuf"/> </br>
+        <a href="https://github.com/yousufislamme">Its Md Yousuf</a> 
+      </td>   
+      <td align="center">
+        <img src="https://avatars.githubusercontent.com/u/73881636?v=3?s=100" width="100px;" alt="Saadaf"/> </br>
+        <a href="https://github.com/saadafahmed45">Saadaf</a>
+      </td> 
+  </tbody>
+ </table>
 
 [![](https://opencollective.com/rxtheme/contributors.svg?width=890&button=false)](https://github.com/rxtheme/institute-bd/graphs/contributors)
 ## License
