@@ -18,7 +18,9 @@ export default function RootLayout({ children }) {
       <body className={inter.className}>
         <ContextProvider>
           <Header />
-          {children}
+          <div className="min-h-screen">
+            {children}
+          </div>
           <Toaster />
           <Footer />
         </ContextProvider>

@@ -9,6 +9,7 @@ const Header = () => {
   const [isDropdownVisible, setIsDropdownVisible] = useState(false);
   const [lastScrollY, setLastScrollY] = useState(0);
   const dropdownRef = useRef(null);
+
   const handleScroll = () => {
     if (window.scrollY > lastScrollY) {
       setIsVisible(false); // Scroll down
@@ -41,7 +42,7 @@ const Header = () => {
   return (
     <>
       <header
-        className={`first-letter: fixed top-0 z-50 w-full border-b-2 bg-white px-1 transition-transform duration-300 md:px-5 lg:px-20 ${
+        className={`first-letter: fixed top-0 z-50 w-full border-b-2 bg-white/60 px-1 backdrop-blur-2xl transition-transform duration-300 md:px-5 lg:px-20 ${
           !isVisible ? "-translate-y-full" : "translate-y-0"
         }`}
       >
@@ -67,12 +68,12 @@ const Header = () => {
             ) : null}
 
             <Link className="px-1 py-2" href="/login">
-              {!users ? (
-                <p>Login</p>
-              ) : (
+              {users.email ? (
                 <p className="capitalize text-purple-500">
                   {users.displayName}
                 </p>
+              ) : (
+                <p>Login</p>
               )}
             </Link>
           </div>
