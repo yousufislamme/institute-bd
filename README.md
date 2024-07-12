@@ -69,11 +69,11 @@ This project is the website for [BD School], designed to provide students, paren
   <tbody>
     <tr>
       <td align="center">
-        <img src="https://avatars.githubusercontent.com/u/71249987?v=3?s=100" width="100px;" alt="Its Md Yousuf"/> </br>
+        <img src="https://avatars.githubusercontent.com/u/71249987?v=3?s=100" width="50px;" alt="Its Md Yousuf"/> </br>
         <a href="https://github.com/yousufislamme">Its Md Yousuf</a> 
       </td>   
       <td align="center">
-        <img src="https://avatars.githubusercontent.com/u/73881636?v=3?s=100" width="100px;" alt="Saadaf"/> </br>
+        <img src="https://avatars.githubusercontent.com/u/73881636?v=3?s=100" width="50px;" alt="Saadaf"/> </br>
         <a href="https://github.com/saadafahmed45">Saadaf</a>
       </td> 
   </tbody>
